@@ -13,7 +13,7 @@ def graph_excercise(data, ejercicio_seleccionado,metrica):
     
     fig = px.line(
         df_filtrado,
-        x="Fecha",
+        x="Fecha ",
         y=metrica,
         color="Progresión",
         title=f"Progreso en {ejercicio_seleccionado}({metrica})",
