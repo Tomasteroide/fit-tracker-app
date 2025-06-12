@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from gsheet_utils import get_worksheet, leer_datos, guardar_datos
+from functions.gsheet_utils import get_worksheet, leer_datos, guardar_datos
 
 def editar_ultimo_registro():
     sheet = get_worksheet()

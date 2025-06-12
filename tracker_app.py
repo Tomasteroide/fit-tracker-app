@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 from datetime import date
-from gsheet_utils import get_worksheet, leer_datos, guardar_datos
+from functions.gsheet_utils import get_worksheet, leer_datos, guardar_datos
 import plotly.express as px
-from graph_types import graph_excercise
-from editor import editar_ultimo_registro
+from functions.graph_types import graph_excercise
+from functions.editor import editar_ultimo_registro
 
 st.set_page_config(page_title="Tracker Calistenia", layout="centered")
 st.title("📊 Tracker de Progreso")
@@ -76,7 +76,7 @@ try:
             sorted(data["Ejercicio"].unique())
         )
         
-        metrica = st.selectbox("Selecciona la métrica a graficar:", ["Peso", "Reps/Tiempo"])
+        metrica = st.selectbox("Selecciona la métrica a graficar:", ["Peso", "Reps o Tiempo"])
 
         fig = graph_excercise(data, ejercicio_seleccionado, metrica)
         if isinstance(fig, str):
